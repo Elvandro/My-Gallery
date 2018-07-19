@@ -9,7 +9,7 @@
 
     {% for photo in photos %}
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="{{photo.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -23,8 +23,8 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <input class="form-control" type="text" value="{{photo.image_url}}" id="link">
-            <a onclick="myFunction()"><button type="button"  class="btn btn-primary">Copy Link</button></a>
+            <span><button type="button"  class="btn btn-primary">Copy Link</button><input class="form-control" type="text" value="{{photo.image_url}}" id="link">
+            <a onclick="myFunction()"></a></span>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
       <br>
       <div class="card">
         <a href="#" class="thumbnail">
-          <img data-toggle="modal" data-target="#exampleModalCenter" src="{{photo.image.url}}" class="img-fluid img-thumbnail rounded" alt="Responsive image" >
+          <img data-toggle="modal" data-target="#{{photo.id}}" src="{{photo.image.url}}" class="img-fluid img-thumbnail rounded" alt="Responsive image" >
         </a>
         <div class="card-body">
           <p class="card-text">{{photo.description}}</p>
