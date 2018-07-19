@@ -17,9 +17,7 @@ def search_results(request):
         query = request.GET.get("image")
         results = Image.search(query)
         message = f"{query}"
-
         return render(request, 'results.html', {"message":message,"results": results})
-
     else:
         message = "Search not found. What images are you looking for? Search here."
         return render(request, 'results.html', {"message": message})
