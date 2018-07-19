@@ -61,7 +61,7 @@ class Image(models.Model):
 
     @classmethod
     def search(cls, query):
-        result = cls.objects.filter(description__icontains=query).order_by('image_name')
+        result = cls.objects.filter(decription__icontains=query).order_by('image_name')
         return result
 
     @classmethod
