@@ -2,21 +2,26 @@
 
 {% block content %}
 {{block.super}}
+<br>
+<h1 class="text-center">Hello, Welcome to the 2018 FIFA world-cup Gallery</h1>
 <div class="container">
   <div class="row">
     {% for photo in photos %}
+
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
       <br>
       <div class="card">
         <a href="#" class="thumbnail">
-          <img src="{{photo.image.url}}" class="img-fluid img-thumbnail rounded" alt="Responsive image">
+          <img src="{{photo.image.url}}" class="img-fluid img-thumbnail rounded" alt="Responsive image" data-toggle="modal" data-target="#photo">
         </a>
         <div class="card-body">
           <p class="card-text">{{photo.decription}}</p>
         </div>
       </div>
     </div>
+
     {% endfor %}
   </div>
+
 </div>
 {% endblock %}
