@@ -30,7 +30,7 @@ class Image(models.Model):
     image = models.ImageField(upload_to = 'gallery/')
     image_name = models.CharField(max_length=30)
     image_url = models.TextField()
-    decription = models.TextField(blank=True)
+    description = models.TextField(blank=True)
     location = models.ForeignKey('Location', on_delete=models.CASCADE)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
     posted_time = models.DateTimeField(auto_now=True)
@@ -61,7 +61,7 @@ class Image(models.Model):
 
     @classmethod
     def search(cls, query):
-        result = cls.objects.filter(decription__icontains=query).order_by('image_name')
+        result = cls.objects.filter(description__icontains=query).order_by('image_name')
         return result
 
     @classmethod
@@ -70,6 +70,6 @@ class Image(models.Model):
         return display
 
     @classmethod
-    def filter_by_location(cls, query):
-        display = cls.objects.filter(location__name__icontains=query)
+    def filter_by_location(cls, search_term):
+        display = cls.objects.filter(location__name__icontains=search_term)
         return display

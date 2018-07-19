@@ -32,6 +32,11 @@ Application is still in development stages and still being updated on a few othe
 ## Contact details
 You can contact me at Elvisamuni22@gmail.com
 
+## Credits,Acknowledgements
+* Sam Ngigi,
+* Moringa School,
+* StackOverflow.com  
+
 ### License
 *MIT* License
 Copyright (c) [2018] [ELVIS AMUNI]
